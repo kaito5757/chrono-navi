@@ -7,9 +7,6 @@ services:
       context: .
       dockerfile: ./apps/web/Dockerfile.dev
     restart: always
-    environment:
-      - NODE_ENV=development
-      - CHOKIDAR_USEPOLLING=true
     volumes:
       - ./apps/web/app:/app/apps/web/app
       - ./apps/web/node_modules:/app/apps/web/node_modules
@@ -23,13 +20,10 @@ services:
       context: .
       dockerfile: ./apps/docs/Dockerfile.dev
     restart: always
-    environment:
-      - NODE_ENV=development
-      - CHOKIDAR_USEPOLLING=true
     volumes:
-      - ./apps/docs/app:/app/apps/web/app
-      - ./apps/docs/node_modules:/app/apps/web/node_modules
-      - ./apps/docs/.next:/app/apps/web/.next
+      - ./apps/docs/app:/app/apps/docs/app
+      - ./apps/docs/node_modules:/app/apps/docs/node_modules
+      - ./apps/docs/.next:/app/apps/docs/.next
     ports:
       - "3001:3001"
 

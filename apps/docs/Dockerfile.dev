@@ -21,4 +21,4 @@ COPY ./apps/docs/next.config.js ./next.config.js
 
 EXPOSE 3001
 
-CMD ["pnpm", "dev"]
+CMD ["pnpm", "dev:docs"]

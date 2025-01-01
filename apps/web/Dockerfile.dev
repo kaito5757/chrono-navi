@@ -17,8 +17,5 @@ COPY pnpm-workspace.yaml ./
 RUN pnpm -g add turbo
 
 COPY . .
-COPY ./apps/web/next.config.js ./next.config.js
 
-EXPOSE 3001
-
-CMD ["pnpm", "dev"]
+CMD ["pnpm", "dev:web"]
