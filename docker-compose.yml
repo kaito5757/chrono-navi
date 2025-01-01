@@ -1,0 +1,38 @@
+version: "3.8" # 最新のバージョンに更新
+
+services:
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile.dev
+    restart: always
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./apps/web/app:/app/apps/web/app
+      - ./apps/web/node_modules:/app/apps/web/node_modules
+      - ./apps/web/.next:/app/apps/web/.next
+    ports:
+      - "3000:3000"
+
+  docs:
+    container_name: docs
+    build:
+      context: .
+      dockerfile: ./apps/docs/Dockerfile.dev
+    restart: always
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./apps/docs/app:/app/apps/web/app
+      - ./apps/docs/node_modules:/app/apps/web/node_modules
+      - ./apps/docs/.next:/app/apps/web/.next
+    ports:
+      - "3001:3001"
+
+networks:
+  default:
+    name: timenavi-net-local

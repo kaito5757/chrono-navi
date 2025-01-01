@@ -1,0 +1,24 @@
+version: "1"
+
+services:
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile.prod
+    restart: always
+    ports:
+      - 3000:3000
+
+  docs:
+    container_name: docs
+    build:
+      context: .
+      dockerfile: ./apps/docs/Dockerfile.prod
+    restart: always
+    ports:
+      - 3001:3001
+
+networks:
+  default:
+    name: timenavi-net-prod
