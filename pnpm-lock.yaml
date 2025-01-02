@@ -36,6 +36,9 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
     devDependencies:
+      '@cloudflare/next-on-pages':
+        specifier: ^1.13.7
+        version: 1.13.7(vercel@39.2.2)(wrangler@3.99.0)
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config

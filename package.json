@@ -2,13 +2,12 @@
   "name": "time-navi",
   "private": true,
   "scripts": {
-    "build": "turbo build",
+    "build": "pnpm biome:check && turbo build",
     "dev": "turbo dev",
     "dev:web": "turbo dev --filter=web",
     "dev:docs": "turbo dev --filter=docs",
-    "lint": "turbo lint",
-    "format-and-lint": "biome check .",
-    "format-and-lint:fix": "biome check . --write"
+    "biome:check": "biome check .",
+    "biome:fix": "biome check --fix ."
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
