@@ -8,8 +8,7 @@
     "dev:admin": "turbo dev --filter=admin",
     "check-types": "turbo check-types",
     "biome:check": "turbo biome:check",
-    "biome:fix": "turbo biome:fix",
-    "ci:biome-check": "biome check ."
+    "biome:fix": "turbo biome:fix"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
