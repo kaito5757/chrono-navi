@@ -27,7 +27,7 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
         with:
-          version: ${{ env.BUN_VERSION }}
+          bun-version: ${{ env.BUN_VERSION }}
 
       - name: Set Node.js version to ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
