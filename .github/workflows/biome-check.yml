@@ -7,38 +7,19 @@ on:
     types:
       - opened
       - synchronize
-    paths:
-      - 'apps/admin/app/**'
-      - 'apps/web/app/**'
-      - 'packages/ui/src/**'
-
-env:
-  NODE_VERSION: 20.17.0
-  BUN_VERSION: 1.1.42
 
 jobs:
   check-biome:
     name: 'Check Biome'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+      - name: Setup Biome CLI
+        uses: biomejs/setup-biome@v2
         with:
-          bun-version: ${{ env.BUN_VERSION }}
-
-      - name: Set Node.js version to ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: bun
-
-      - name: Install dependencies
-        run: bun install
-        env:
-          BUN_CACHE: ${{ github.workspace }}/.bun-cache
+          version: 1.9.4
 
       - name: Run Biome
-        run: bun run biome check
+        run: biome ci .
