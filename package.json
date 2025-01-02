@@ -2,7 +2,7 @@
   "name": "time-navi",
   "private": true,
   "scripts": {
-    "build": "turbo build",
+    "build": "pnpm check-types && pnpm biome:check && turbo build",
     "dev": "turbo dev",
     "dev:web": "turbo dev --filter=web",
     "dev:admin": "turbo dev --filter=admin",
