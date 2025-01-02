@@ -7,10 +7,6 @@ on:
     types:
       - opened
       - synchronize
-    paths:
-      - 'apps/admin/app/**'
-      - 'apps/web/app/**'
-      - 'packages/ui/src/**'
 
 env:
   BUN_VERSION: 1.1.42
@@ -34,4 +30,4 @@ jobs:
           BUN_CACHE: ${{ github.workspace }}/.bun-cache
 
       - name: Run Biome
-        run: bun run ci:biome-check
+        run: biome ci
