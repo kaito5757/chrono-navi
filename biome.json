@@ -1,46 +1,21 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "vcs": {
-    "enabled": false,
-    "clientKind": "git",
-    "useIgnoreFile": false
-  },
-  "files": {
-    "ignoreUnknown": false,
-    "ignore": []
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "include": [
-      "./apps/web/app/**/*.ts",
-      "./apps/web/app/**/*.tsx",
-      "./apps/docs/app/**/*.ts",
-      "./apps/docs/app/**/*.tsx",
-      "./packages/**/src/**/*.ts",
-      "./packages/**/src/**/*.tsx"
-    ]
-  },
-  "organizeImports": {
-    "enabled": true
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true
-    },
-    "include": [
-      "./apps/web/app/**/*.ts",
-      "./apps/web/app/**/*.tsx",
-      "./apps/docs/app/**/*.ts",
-      "./apps/docs/app/**/*.tsx",
-      "./packages/**/src/**/*.ts",
-      "./packages/**/src/**/*.tsx"
-    ]
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double"
-    }
-  }
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "space"
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double"
+		}
+	}
 }

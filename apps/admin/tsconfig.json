@@ -5,7 +5,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "noImplicitAny": true
   },
   "include": [
     "**/*.ts",

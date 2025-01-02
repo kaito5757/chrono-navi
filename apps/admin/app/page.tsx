@@ -1,5 +1,6 @@
 import { Button } from "@repo/ui/button";
-import Image, { type ImageProps } from "next/image";
+import type { ImageProps } from "next/image";
+import Image from "next/image";
 import styles from "./page.module.css";
 
 type Props = Omit<ImageProps, "src"> & {
@@ -33,9 +34,9 @@ export default function Home() {
         />
         <ol>
           <li>
-            Get started by editing <code>apps/docs/app/page.tsx</code>
+            Get started by editing <code>apps/admin/app/page.tsx</code>
           </li>
-          <li>docs</li>
+          <li>admin</li>
         </ol>
 
         <div className={styles.ctas}>
@@ -63,7 +64,7 @@ export default function Home() {
             Read our docs
           </a>
         </div>
-        <Button appName="docs" className={styles.secondary}>
+        <Button appName="admin" className={styles.secondary}>
           Open alert
         </Button>
       </main>

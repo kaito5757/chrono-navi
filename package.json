@@ -2,15 +2,15 @@
   "name": "time-navi",
   "private": true,
   "scripts": {
-    "build": "pnpm biome:check && turbo build",
+    "build": "turbo build",
     "dev": "turbo dev",
     "dev:web": "turbo dev --filter=web",
-    "dev:docs": "turbo dev --filter=docs",
-    "biome:check": "biome check .",
-    "biome:fix": "biome check --fix ."
+    "dev:admin": "turbo dev --filter=admin",
+    "check-types": "turbo check-types",
+    "biome:check": "turbo biome:check",
+    "biome:fix": "turbo biome:fix"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
     "prettier": "^3.2.5",
     "turbo": "^2.3.3",
     "typescript": "5.5.4"

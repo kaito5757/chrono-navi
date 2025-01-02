@@ -14,16 +14,16 @@ services:
     ports:
       - "3000:3000"
 
-  docs:
-    container_name: docs
+  admin:
+    container_name: admin
     build:
       context: .
-      dockerfile: ./apps/docs/Dockerfile.dev
+      dockerfile: ./apps/admin/Dockerfile.dev
     restart: always
     volumes:
-      - ./apps/docs/app:/app/apps/docs/app
-      - ./apps/docs/node_modules:/app/apps/docs/node_modules
-      - ./apps/docs/.next:/app/apps/docs/.next
+      - ./apps/admin/app:/app/apps/admin/app
+      - ./apps/admin/node_modules:/app/apps/admin/node_modules
+      - ./apps/admin/.next:/app/apps/admin/.next
     ports:
       - "3001:3001"
 
