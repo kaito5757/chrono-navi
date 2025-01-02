@@ -21,5 +21,8 @@ jobs:
         with:
           version: 1.9.4
 
-      - name: Run Biome
-        run: biome ci .
+      - name: Run Biome to web app
+        run: biome ci ./apps/web/app/**
+
+      - name: Run Biome to admin app
+        run: biome ci ./apps/admin/app/**
