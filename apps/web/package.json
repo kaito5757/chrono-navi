@@ -10,7 +10,7 @@
     "check-types": "tsc --noEmit",
     "biome:check": "biome check .",
     "biome:fix": "biome check --fix .",
-    "pages:build": "npx @cloudflare/next-on-pages"
+    "pages:web:build": "npx @cloudflare/next-on-pages"
   },
   "dependencies": {
     "@repo/ui": "workspace:*",

@@ -16,8 +16,11 @@
     "biome:fix": {
       "dependsOn": ["^biome:fix"]
     },
-    "pages:build": {
-      "dependsOn": ["^pages:build"]
+    "pages:web:build": {
+      "dependsOn": ["^pages:web:build"]
+    },
+    "pages:admin:build": {
+      "dependsOn": ["^pages:admin:build"]
     },
     "dev": {
       "cache": false,
