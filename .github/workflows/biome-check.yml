@@ -13,7 +13,6 @@ on:
       - 'packages/ui/src/**'
 
 env:
-  NODE_VERSION: 20.17.0
   BUN_VERSION: 1.1.42
 
 jobs:
@@ -28,12 +27,6 @@ jobs:
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: ${{ env.BUN_VERSION }}
-
-      - name: Set Node.js version to ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: bun
 
       - name: Install dependencies
         run: bun install
