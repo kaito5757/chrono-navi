@@ -34,4 +34,4 @@ jobs:
           BUN_CACHE: ${{ github.workspace }}/.bun-cache
 
       - name: Run Biome
-        run: bun run biome check
+        run: bun run actions:biome-check

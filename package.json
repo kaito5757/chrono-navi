@@ -8,7 +8,8 @@
     "dev:admin": "turbo dev --filter=admin",
     "check-types": "turbo check-types",
     "biome:check": "turbo biome:check",
-    "biome:fix": "turbo biome:fix"
+    "biome:fix": "turbo biome:fix",
+    "actions:biome-check": "biome check"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
