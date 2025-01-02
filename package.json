@@ -1,5 +1,5 @@
 {
-  "name": "time-navi",
+  "name": "chrono-navi",
   "private": true,
   "scripts": {
     "build": "pnpm check-types && pnpm biome:check && turbo build",
