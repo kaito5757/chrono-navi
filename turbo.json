@@ -16,6 +16,9 @@
     "biome:fix": {
       "dependsOn": ["^biome:fix"]
     },
+    "pages:build": {
+      "dependsOn": ["^pages:build"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
