@@ -9,9 +9,10 @@
     "check-types": "turbo check-types",
     "biome:check": "turbo biome:check",
     "biome:fix": "turbo biome:fix",
-    "actions:biome-check": "biome check"
+    "ci:biome-check": "biome check ."
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "prettier": "^3.2.5",
     "turbo": "^2.3.3",
     "typescript": "5.5.4"
