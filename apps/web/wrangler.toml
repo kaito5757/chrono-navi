@@ -1,4 +1,4 @@
 name = "chrono-navi-web"
 compatibility_date = "2025-01-03"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = "apps/web/.vercel/output/static"
+pages_build_output_dir = ".vercel/output/static"
