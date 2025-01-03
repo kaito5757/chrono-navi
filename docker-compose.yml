@@ -1,31 +1,24 @@
 version: "3.8" # 最新のバージョンに更新
 
 services:
-  web:
-    container_name: web
+  next:
+    container_name: chrono-navi-next-local
     build:
       context: .
-      dockerfile: ./apps/web/Dockerfile.dev
+      dockerfile: ./Dockerfile.dev
     restart: always
     volumes:
       - ./apps/web/app:/app/apps/web/app
-      - ./apps/web/node_modules:/app/apps/web/node_modules
+      - ./apps/web/public:/app/apps/web/public
       - ./apps/web/.next:/app/apps/web/.next
-    ports:
-      - "3000:3000"
-
-  admin:
-    container_name: admin
-    build:
-      context: .
-      dockerfile: ./apps/admin/Dockerfile.dev
-    restart: always
-    volumes:
       - ./apps/admin/app:/app/apps/admin/app
-      - ./apps/admin/node_modules:/app/apps/admin/node_modules
+      - ./apps/admin/public:/app/apps/admin/public
       - ./apps/admin/.next:/app/apps/admin/.next
     ports:
+      - "3000:3000"
       - "3001:3001"
+    command: >
+      sh -c "pnpm dev"
 
 networks:
   default:

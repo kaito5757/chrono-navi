@@ -2,7 +2,7 @@
   "name": "chrono-navi",
   "private": true,
   "scripts": {
-    "build": "pnpm check-types && pnpm biome:check && turbo build",
+    "build": "turbo build && pnpm check-types && pnpm biome:check",
     "dev": "turbo dev",
     "dev:web": "turbo dev --filter=web",
     "dev:admin": "turbo dev --filter=admin",
