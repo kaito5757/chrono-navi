@@ -12,10 +12,16 @@ ENV PATH="$PNPM_HOME:$PATH"
 WORKDIR /app
 
 COPY package.json ./
+COPY pnpm-lock.yaml ./
 COPY pnpm-workspace.yaml ./
+COPY turbo.json ./
+
+COPY apps/admin/package.json /app/apps/admin/
+COPY apps/admin/pnpm-workspace.yaml /app/apps/admin/
+COPY apps/web/package.json /app/apps/web/
+COPY apps/web/pnpm-workspace.yaml /app/apps/web/
+COPY packages /app/packages
 
 RUN pnpm -g add turbo
 
-COPY . .
-
-CMD ["pnpm", "dev:web"]
+RUN pnpm install
