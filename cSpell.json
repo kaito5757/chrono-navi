@@ -1,4 +1,22 @@
 {
   "version": "0.2",
-  "words": ["chrono", "navi"]
+  "words": [
+    "chrono",
+    "navi",
+    "shadcn",
+    "biome",
+    "repo",
+    "turbo",
+    "radix",
+    "clsx",
+    "lucide",
+    "tailwind",
+    "postcss",
+    "typescript",
+    "react",
+    "next",
+    "cloudflare",
+    "node",
+    "autoprefixer"
+  ]
 }
