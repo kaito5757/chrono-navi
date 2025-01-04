@@ -1,4 +1,4 @@
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@repo/shadcn-ui/components/button";
 import type { ImageProps } from "next/image";
 import Image from "next/image";
 import styles from "./page.module.css";

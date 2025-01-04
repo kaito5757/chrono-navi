@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@repo/ui/*": ["../../packages/ui/src/*"]
+      "@repo/shadcn-ui/*": ["../../packages/shadcn-ui/src/*"]
     },
     "plugins": [
       {
