@@ -1,4 +1,4 @@
-import "@repo/ui/globals.css";
+import "@repo/tailwind-config/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
