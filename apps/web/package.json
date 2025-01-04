@@ -13,11 +13,13 @@
     "pages:web:build": "npx @cloudflare/next-on-pages"
   },
   "dependencies": {
+    "@biomejs/biome": "1.9.4",
     "@repo/ui": "workspace:*",
+    "lucide-react": "^0.469.0",
     "next": "^15.1.0",
+    "next-themes": "^0.4.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "@biomejs/biome": "1.9.4"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.7",
@@ -25,6 +27,8 @@
     "@types/node": "^20",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
     "typescript": "5.5.4"
   }
 }
