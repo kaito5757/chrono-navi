@@ -4,6 +4,8 @@
 #   Stop:           docker compose down
 #   Destroy:        docker compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml down -v --remove-orphans
 
+version: '3.8'
+
 name: chrono-navi-local
 
 services:
@@ -17,12 +19,17 @@ services:
       - ../apps/web/app:/app/apps/web/app
       - ../apps/web/public:/app/apps/web/public
       - ../apps/web/.next:/app/apps/web/.next
+      - ../apps/web/.env.docker:/app/apps/web/.env
       - ../apps/admin/app:/app/apps/admin/app
       - ../apps/admin/public:/app/apps/admin/public
       - ../apps/admin/.next:/app/apps/admin/.next
+      - ../apps/admin/.env.docker:/app/apps/admin/.env
+      - ../packages:/app/packages
     ports:
       - "3000:3000"
       - "3001:3001"
+    environment:
+      DATABASE_URL: postgres://postgres:your-super-secret-and-long-postgres-password@db:5432/postgres
     command: >
       sh -c "pnpm dev"
 
