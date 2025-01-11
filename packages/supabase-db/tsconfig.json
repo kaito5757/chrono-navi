@@ -2,9 +2,10 @@
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["./*"],
-      "@repo/shadcn-ui/*": ["./src/*"]
+      "@/*": ["./*"]
     },
     "plugins": [
       {

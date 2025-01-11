@@ -7,6 +7,7 @@
     "dev:web": "turbo dev --filter=web",
     "dev:admin": "turbo dev --filter=admin",
     "docker:up": "docker-compose -f ./docker/docker-compose.yml up -d && docker-compose -f ./docker/docker-compose.yml logs -f next",
+    "docker:up-build": "docker-compose -f ./docker/docker-compose.yml up --build -d && docker-compose -f ./docker/docker-compose.yml logs -f next",
     "docker:down": "docker-compose -f ./docker/docker-compose.yml down",
     "check-types": "turbo check-types",
     "biome:check": "turbo biome:check",

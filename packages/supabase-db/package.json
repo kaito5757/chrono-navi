@@ -1,8 +1,12 @@
 {
-  "name": "supabase-db",
+  "name": "@repo/supabase-db",
   "version": "0.0.0",
   "type": "module",
   "private": true,
+  "exports": {
+    "./db": "./src/db.ts",
+    "./schema": "./src/schema/index.ts"
+  },
   "scripts": {
     "check-types": "tsc --noEmit",
     "biome:check": "biome check .",
