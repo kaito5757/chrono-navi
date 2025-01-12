@@ -1,0 +1,22 @@
+name: Database Migrate
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  database-migrate:
+    name: 'Database Migrate'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install
+        run: npm install -g drizzle-orm drizzle-kit pg
+
+      - name: Apply migrations
+        run: drizzle-kit migrate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}

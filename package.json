@@ -5,8 +5,6 @@
     "build": "turbo build",
     "build-and-check": "turbo build && pnpm check-types && pnpm biome:check",
     "dev": "turbo dev",
-    "dev:web": "turbo dev --filter=web",
-    "dev:admin": "turbo dev --filter=admin",
     "docker:up": "docker-compose -f ./docker/docker-compose.yml up -d && docker-compose -f ./docker/docker-compose.yml logs -f next",
     "docker:up-build": "docker-compose -f ./docker/docker-compose.yml up --build -d && docker-compose -f ./docker/docker-compose.yml logs -f next",
     "docker:down": "docker-compose -f ./docker/docker-compose.yml down",
