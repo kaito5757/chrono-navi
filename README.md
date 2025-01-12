@@ -44,7 +44,7 @@
    pnpm db:push
    ```
 
-### 注意事項
+### 事項
 - **docker-composeを停止するには**:
    ```bash
    pnpm docker:down
