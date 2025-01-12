@@ -8,6 +8,8 @@
     "./schema": "./src/schema/index.ts"
   },
   "scripts": {
+    "db:generate": "pnpm drizzle-kit generate",
+    "db:push": "pnpm drizzle-kit migrate",
     "check-types": "tsc --noEmit",
     "biome:check": "biome check .",
     "biome:fix": "biome check --fix ."

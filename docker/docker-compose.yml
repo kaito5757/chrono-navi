@@ -18,18 +18,16 @@ services:
     volumes:
       - ../apps/web/app:/app/apps/web/app
       - ../apps/web/public:/app/apps/web/public
-      - ../apps/web/.next:/app/apps/web/.next
       - ../apps/web/.env.docker:/app/apps/web/.env
       - ../apps/admin/app:/app/apps/admin/app
       - ../apps/admin/public:/app/apps/admin/public
-      - ../apps/admin/.next:/app/apps/admin/.next
       - ../apps/admin/.env.docker:/app/apps/admin/.env
       - ../packages:/app/packages
     ports:
       - "3000:3000"
       - "3001:3001"
     command: >
-      sh -c "pnpm dev"
+      sh -c "pnpm build && pnpm dev"
 
   studio:
     container_name: supabase-studio

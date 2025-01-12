@@ -1,9 +1,6 @@
 FROM node:18-alpine
 
-# apk updateを実行して、libc6-compatをインストールする
 RUN apk update && apk add --no-cache libc6-compat
-
-# pnpmをインストール
 RUN npm install -g pnpm
 
 ENV PNPM_HOME=/root/.local/share/pnpm
@@ -20,14 +17,21 @@ COPY apps/web/package.json /app/apps/web/
 COPY apps/web/pnpm-workspace.yaml /app/apps/web/
 COPY apps/web/tailwind.config.ts /app/apps/web/
 COPY apps/web/postcss.config.js /app/apps/web/
+COPY apps/web/next.config.js /app/apps/web/
+COPY apps/web/tsconfig.json /app/apps/web/
 
 COPY apps/admin/package.json /app/apps/admin/
 COPY apps/admin/pnpm-workspace.yaml /app/apps/admin/
 COPY apps/admin/tailwind.config.ts /app/apps/admin/
 COPY apps/admin/postcss.config.js /app/apps/admin/
+COPY apps/admin/next.config.js /app/apps/admin/
+COPY apps/admin/tsconfig.json /app/apps/admin/
 
 COPY packages /app/packages
 
 RUN pnpm -g add turbo
 
 RUN pnpm install
+
+RUN pnpm --filter ./apps/web uninstall -D @cloudflare/next-on-pages && \
+    pnpm --filter ./apps/admin uninstall -D @cloudflare/next-on-pages
