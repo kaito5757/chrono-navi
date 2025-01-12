@@ -22,25 +22,26 @@
    ```
 
 3. 環境変数を設定します。
-   - next-env
    ```bash
-   cp .env.example .env
+   cp docker/.env.example docker/.env
+   cp apps/web/.env.example apps/web/.env
+   cp apps/admin/.env.example apps/admin/.env
+   cp packages/supabase/.env.example packages/supabase/.env
    ```
 
-   - docker-env
-   ```bash
-   cd docker
-   cp .env.example .env
-   ```
-
-4. ビルドします。
-   ```bash
-   pnpm build
-   ```
-
-5. docker-composeを起動します。
+4. docker-composeを起動します。
    ```bash
    pnpm docker:up
+   ```
+
+5. マイグレーションを実行します。
+   ```bash
+   pnpm --filter @repo/supabase-db db:push
+   ```
+   or
+   ```bash
+   cd packages/supabase-db
+   pnpm db:push
    ```
 
 ### 注意事項
