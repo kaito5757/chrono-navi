@@ -17,6 +17,6 @@ jobs:
         run: npm install -g drizzle-orm drizzle-kit pg
 
       - name: Apply migrations
-        run: drizzle-kit migrate --config=packages/supabase-db/drizzle-dev.config.ts
+        run: drizzle-kit migrate --config=packages/supabase-db/drizzle.config.ts
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
