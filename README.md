@@ -44,8 +44,33 @@
    pnpm db:push
    ```
 
-### 事項
-- **docker-composeを停止するには**:
+### Docker関連
+#### ▼ docker-compose停止方法
    ```bash
    pnpm docker:down
    ```
+
+### Turborepo packages関連
+
+#### ▼ 内部（ライブラリ）パッケージのベストプラクティス
+- パッケージごとに1つの「目的」を持つようにする（複数の「目的」を持たない）
+   - 理解しやすくなる
+   - パッケージごとの依存関係の削減
+- **参考**
+   - [パッケージの種類](https://turbo.build/repo/docs/core-concepts/package-types)
+
+#### ▼ 依存関係のインストールに関するベストプラクティス
+- 依存関係が使用される場所にインストールする
+   - 明確さの向上
+   - 柔軟性の向上
+   - キャッシュ機能の向上
+   - 未使用の依存関係の削除
+- 各パッケージの依存関係を追加方法
+   - dependenciesに追加
+      ```bash
+      pnpm install jest --recursive --filter=web --filter=@repo/ui
+      ```
+   - devDependenciesに追加
+      ```bash
+      pnpm install jest --save-dev --recursive --filter=web --filter=@repo/ui
+      ```
