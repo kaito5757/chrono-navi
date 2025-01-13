@@ -9,8 +9,11 @@
     "biome:check": "biome check .",
     "biome:fix": "biome check --fix ."
   },
-  "dependencies": {},
   "devDependencies": {
     "@repo/typescript-config": "workspace:*"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.47.12"
   }
 }
