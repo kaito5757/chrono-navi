@@ -201,6 +201,9 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
+      next:
+        specifier: ^15.1.0
+        version: 15.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
   packages/supabase-db:
     dependencies:

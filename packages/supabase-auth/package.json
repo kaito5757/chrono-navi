@@ -10,7 +10,8 @@
     "biome:fix": "biome check --fix ."
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*"
+    "@repo/typescript-config": "workspace:*",
+    "next": "^15.1.0"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
