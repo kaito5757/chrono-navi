@@ -81,6 +81,9 @@ importers:
       '@repo/shadcn-ui':
         specifier: workspace:*
         version: link:../../packages/shadcn-ui
+      '@repo/supabase-auth':
+        specifier: workspace:*
+        version: link:../../packages/supabase-auth
       '@repo/supabase-db':
         specifier: workspace:*
         version: link:../../packages/supabase-db
