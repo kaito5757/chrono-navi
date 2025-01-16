@@ -147,11 +147,11 @@ services:
 
       # GOTRUE_MAILER_SECURE_EMAIL_CHANGE_ENABLED: true
       # GOTRUE_SMTP_MAX_FREQUENCY: 1s
-      GOTRUE_SMTP_ADMIN_EMAIL: ${SMTP_ADMIN_EMAIL}
-      GOTRUE_SMTP_HOST: ${SMTP_HOST}
-      GOTRUE_SMTP_PORT: ${SMTP_PORT}
-      GOTRUE_SMTP_USER: ${SMTP_USER}
-      GOTRUE_SMTP_PASS: ${SMTP_PASS}
+      GOTRUE_SMTP_ADMIN_EMAIL: "admin@example.com"
+      GOTRUE_SMTP_HOST: "mail"
+      GOTRUE_SMTP_PORT: "2500"
+      GOTRUE_SMTP_USER: ""
+      GOTRUE_SMTP_PASS: ""
       GOTRUE_SMTP_SENDER_NAME: ${SMTP_SENDER_NAME}
       GOTRUE_MAILER_URLPATHS_INVITE: ${MAILER_URLPATHS_INVITE}
       GOTRUE_MAILER_URLPATHS_CONFIRMATION: ${MAILER_URLPATHS_CONFIRMATION}
@@ -179,10 +179,6 @@ services:
       # GOTRUE_HOOK_SEND_EMAIL_ENABLED: "false"
       # GOTRUE_HOOK_SEND_EMAIL_URI: "http://host.docker.internal:54321/functions/v1/email_sender"
       # GOTRUE_HOOK_SEND_EMAIL_SECRETS: "v1,whsec_VGhpcyBpcyBhbiBleGFtcGxlIG9mIGEgc2hvcnRlciBCYXNlNjQgc3RyaW5n"
-
-
-
-
 
   rest:
     container_name: supabase-rest
@@ -504,6 +500,13 @@ services:
       - POOLER_POOL_MODE=transaction
     volumes:
       - ./volumes/pooler/pooler.exs:/etc/pooler/pooler.exs:ro
+
+  mail:
+    image: inbucket/inbucket:latest
+    ports:
+      - '2500:2500' # SMTP
+      - '9000:9000' # web interface
+      - '1100:1100' # POP3
 
 volumes:
   db-config:
