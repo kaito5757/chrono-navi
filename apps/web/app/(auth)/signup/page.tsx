@@ -1,6 +1,6 @@
 "use client";
 
-import { login } from "./action";
+import { signup } from "./action";
 
 export default function LoginPage() {
   return (
@@ -33,10 +33,10 @@ export default function LoginPage() {
         <div className="flex gap-4">
           <button
             type="submit"
-            formAction={login}
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            formAction={signup}
+            className="px-4 py-2 bg-green-500 text-white rounded"
           >
-            Log in
+            Sign up
           </button>
         </div>
       </form>
