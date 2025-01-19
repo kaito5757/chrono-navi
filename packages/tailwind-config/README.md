@@ -1,1 +1,1 @@
-# `tailwind.config`
+# `tailwind-config`
