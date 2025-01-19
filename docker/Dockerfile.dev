@@ -19,6 +19,7 @@ COPY apps/web/tailwind.config.ts /app/apps/web/
 COPY apps/web/postcss.config.js /app/apps/web/
 COPY apps/web/next.config.js /app/apps/web/
 COPY apps/web/tsconfig.json /app/apps/web/
+COPY apps/web/middleware.ts /app/apps/web/
 
 COPY apps/admin/package.json /app/apps/admin/
 COPY apps/admin/pnpm-workspace.yaml /app/apps/admin/
@@ -26,6 +27,7 @@ COPY apps/admin/tailwind.config.ts /app/apps/admin/
 COPY apps/admin/postcss.config.js /app/apps/admin/
 COPY apps/admin/next.config.js /app/apps/admin/
 COPY apps/admin/tsconfig.json /app/apps/admin/
+COPY apps/admin/middleware.ts /app/apps/admin/
 
 COPY packages /app/packages
 

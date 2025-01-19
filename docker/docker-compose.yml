@@ -17,9 +17,11 @@ services:
     restart: always
     volumes:
       - ../apps/web/app:/app/apps/web/app
+      - ../apps/web/middleware.ts:/app/apps/web/middleware.ts
       - ../apps/web/public:/app/apps/web/public
       - ../apps/web/.env.docker:/app/apps/web/.env
       - ../apps/admin/app:/app/apps/admin/app
+      - ../apps/admin/middleware.ts:/app/apps/admin/middleware.ts
       - ../apps/admin/public:/app/apps/admin/public
       - ../apps/admin/.env.docker:/app/apps/admin/.env
       - ../packages:/app/packages
@@ -503,6 +505,7 @@ services:
 
   mail:
     image: inbucket/inbucket:latest
+    container_name: inbucket
     ports:
       - '2500:2500' # SMTP
       - '9000:9000' # web interface

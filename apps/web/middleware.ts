@@ -2,6 +2,8 @@ import { updateSession } from "@repo/supabase-auth/middleware";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
+const ignorePaths = ["/login", "/signup"];
+
 export async function middleware(request: NextRequest) {
   const { supabase, supabaseResponse } = await updateSession(request);
 
@@ -11,11 +13,19 @@ export async function middleware(request: NextRequest) {
 
   if (
     !user &&
-    !request.nextUrl.pathname.startsWith("/login") &&
-    !request.nextUrl.pathname.startsWith("/signup")
+    ignorePaths.every((path) => !request.nextUrl.pathname.startsWith(path))
   ) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
+    return NextResponse.redirect(url);
+  }
+
+  if (
+    user &&
+    ignorePaths.some((path) => request.nextUrl.pathname.startsWith(path))
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/";
     return NextResponse.redirect(url);
   }
 
