@@ -1,8 +1,6 @@
 import { Button } from "@repo/shadcn-ui/components/button";
-import { createClient } from "@repo/supabase-auth/server";
 import { db } from "@repo/supabase-db/db";
 import { users } from "@repo/supabase-db/schema";
-import { cookies } from "next/headers";
 import Image, { type ImageProps } from "next/image";
 import styles from "./page.module.css";
 
@@ -24,11 +22,6 @@ const ThemeImage = (props: Props) => {
 
 export default async function Home() {
   const user = await db.select().from(users);
-  const supabase = await createClient(cookies);
-  console.log(
-    "Getting all users from the database: ",
-    (await supabase.auth.getUser()).data.user?.id,
-  );
   console.log("Getting all users from the database: ", user);
 
   return (
