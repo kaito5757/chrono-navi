@@ -29,6 +29,12 @@ importers:
       '@repo/shadcn-ui':
         specifier: workspace:*
         version: link:../../packages/shadcn-ui
+      '@repo/supabase-auth':
+        specifier: workspace:*
+        version: link:../../packages/supabase-auth
+      '@repo/supabase-db':
+        specifier: workspace:*
+        version: link:../../packages/supabase-db
       lucide-react:
         specifier: ^0.469.0
         version: 0.469.0(react@19.0.0)

@@ -1,4 +1,6 @@
 import { updateSession } from "@repo/supabase-auth/middleware";
+import { db } from "@repo/supabase-db/db";
+import { users } from "@repo/supabase-db/schema";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
@@ -10,6 +12,9 @@ export async function middleware(request: NextRequest) {
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
+  const userData = await db.select().from(users);
+  console.log("Connection database test: user", userData);
 
   if (
     !user &&
