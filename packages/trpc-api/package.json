@@ -1,0 +1,17 @@
+{
+  "name": "@repo/trpc-api",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "biome:check": "biome check .",
+    "biome:fix": "biome check --fix ."
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^22.10.7"
+  }
+}
