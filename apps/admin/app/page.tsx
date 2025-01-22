@@ -1,4 +1,6 @@
 import { Button } from "@repo/shadcn-ui/components/button";
+import { db } from "@repo/supabase-db/db";
+import { users } from "@repo/supabase-db/schema";
 import type { ImageProps } from "next/image";
 import Image from "next/image";
 import styles from "./page.module.css";
@@ -19,7 +21,10 @@ const ThemeImage = (props: Props) => {
   );
 };
 
-export default function Home() {
+export default async function Home() {
+  const user = await db.select().from(users);
+  console.log("Getting all users from the database: ", user);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
