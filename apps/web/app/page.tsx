@@ -1,3 +1,5 @@
+"use server";
+
 import { Button } from "@repo/shadcn-ui/components/button";
 import { db } from "@repo/supabase-db/db";
 import { users } from "@repo/supabase-db/schema";
@@ -57,7 +59,7 @@ export default async function Home() {
               width={20}
               height={20}
             />
-            Deploy now
+            Deploy now　あああ
           </a>
           <a
             href="https://turbo.build/repo/docs?utm_source"
