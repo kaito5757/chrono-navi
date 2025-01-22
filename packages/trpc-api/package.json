@@ -9,6 +9,12 @@
     "biome:fix": "biome check --fix ."
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.64.2",
+    "@trpc/client": "^10.45.2",
+    "@trpc/react-query": "^10.45.2",
+    "@trpc/server": "^10.45.2",
+    "superjson": "^2.2.2",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
