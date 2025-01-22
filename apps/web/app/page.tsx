@@ -1,10 +1,10 @@
-"use server";
-
 import { Button } from "@repo/shadcn-ui/components/button";
 import { db } from "@repo/supabase-db/db";
 import { users } from "@repo/supabase-db/schema";
 import Image, { type ImageProps } from "next/image";
 import styles from "./page.module.css";
+
+export const dynamic = "force-dynamic";
 
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
