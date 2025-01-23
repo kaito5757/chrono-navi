@@ -30,10 +30,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup
-        uses: biomejs/setup-biome@v2
-        with:
-          version: 1.9.4
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Run
         run: yarn check-types
