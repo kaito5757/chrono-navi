@@ -263,6 +263,12 @@ importers:
 
   packages/trpc-api:
     dependencies:
+      '@repo/supabase-auth':
+        specifier: workspace:*
+        version: link:../supabase-auth
+      '@repo/supabase-db':
+        specifier: workspace:*
+        version: link:../supabase-db
       '@tanstack/react-query':
         specifier: ^5.64.2
         version: 5.64.2(react@19.0.0)
@@ -288,6 +294,9 @@ importers:
       '@types/node':
         specifier: ^22.10.7
         version: 22.10.7
+      next:
+        specifier: ^15.1.0
+        version: 15.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       typescript:
         specifier: 5.5.4
         version: 5.5.4

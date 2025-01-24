@@ -9,6 +9,8 @@
     "biome:fix": "biome check --fix ."
   },
   "dependencies": {
+    "@repo/supabase-auth": "workspace:*",
+    "@repo/supabase-db": "workspace:*",
     "@tanstack/react-query": "^5.64.2",
     "@trpc/client": "^10.45.2",
     "@trpc/react-query": "^10.45.2",
@@ -19,6 +21,7 @@
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^22.10.7",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "next": "^15.1.0"
   }
 }
