@@ -11,7 +11,10 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    // 「createCaller」の型注釈エラーを回避するために「declaration」を「false」に設定
+    "declaration": false,
+    "declarationMap": false
   },
   "include": ["."],
   "exclude": ["node_modules", ".turbo"]
