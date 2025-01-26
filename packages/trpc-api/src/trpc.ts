@@ -1,17 +1,16 @@
 import { createClient } from "@repo/supabase-auth/server";
 import type { UserResponse } from "@repo/supabase-auth/types";
-import { db } from "@repo/supabase-db/db";
-import { initTRPC } from "@trpc/server";
+import { TRPCError, initTRPC } from "@trpc/server";
+import type { RequestCookies } from "next/dist/compiled/@edge-runtime/cookies";
 import type { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 
-export const createTRPCContext = async (opts: {
-  cookies: () => Promise<ReadonlyRequestCookies>;
-}): Promise<{ user: UserResponse; db: typeof db }> => {
-  const client = await createClient(opts.cookies);
+export const createTRPCContext = async (
+  cookies: ReadonlyRequestCookies | RequestCookies,
+): Promise<{ user: UserResponse }> => {
+  const client = await createClient(cookies);
   const user = await client.auth.getUser();
   return {
     user,
-    db,
   };
 };
 
@@ -19,5 +18,17 @@ const t = initTRPC
   .context<Awaited<ReturnType<typeof createTRPCContext>>>()
   .create();
 
-export const router = t.router;
-export const publicProcedure = t.procedure;
+export const createCallerFactory = t.createCallerFactory;
+
+export const createTRPCRouter = t.router;
+
+export const protectedProcedure = t.procedure.use(({ ctx, next }) => {
+  if (!ctx.user.data.user) {
+    throw new TRPCError({ code: "UNAUTHORIZED" });
+  }
+  return next({
+    ctx: {
+      user: ctx.user,
+    },
+  });
+});

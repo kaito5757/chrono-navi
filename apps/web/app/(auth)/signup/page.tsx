@@ -1,8 +1,5 @@
 import { signup } from "./action";
 
-export const dynamic = "force-dynamic";
-export const runtime = "edge";
-
 export default function LoginPage() {
   return (
     <div className="max-w-md mx-auto mt-10 p-6">

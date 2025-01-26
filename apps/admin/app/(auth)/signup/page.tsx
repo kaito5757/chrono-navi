@@ -1,8 +1,6 @@
-"use client";
-
 import { signup } from "./action";
 
-export default function LoginPage() {
+export default function page() {
   return (
     <div className="max-w-md mx-auto mt-10 p-6">
       <form>

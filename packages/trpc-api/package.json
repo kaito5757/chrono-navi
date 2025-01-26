@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "type": "module",
   "private": true,
+  "exports": {
+    "./root": "./src/root.ts",
+    "./trpc": "./src/trpc.ts"
+  },
   "scripts": {
     "check-types": "tsc --noEmit",
     "biome:check": "biome check .",

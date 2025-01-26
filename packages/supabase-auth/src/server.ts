@@ -1,11 +1,12 @@
 import { createServerClient } from "@supabase/ssr";
+import type { RequestCookies } from "next/dist/compiled/@edge-runtime/cookies";
 import type { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { env } from "../env";
 
 export async function createClient(
-  cookies: () => Promise<ReadonlyRequestCookies>,
+  cookie: ReadonlyRequestCookies | RequestCookies,
 ) {
-  const cookieStore = await cookies();
+  const cookieStore = cookie;
 
   return createServerClient(
     env.NEXT_PUBLIC_SUPABASE_URL,

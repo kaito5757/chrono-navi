@@ -1,9 +1,8 @@
 import { Button } from "@repo/shadcn-ui/components/button";
 import Image, { type ImageProps } from "next/image";
 import styles from "./page.module.css";
-
-export const dynamic = "force-dynamic";
-export const runtime = "edge";
+import { createApi } from "@/trpc/server";
+import { cookies } from "next/headers";
 
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
@@ -22,6 +21,10 @@ const ThemeImage = (props: Props) => {
 };
 
 export default async function Home() {
+  const api = await createApi(await cookies());
+  const user = await api.user.all();
+  console.log("テストーーーーーーーーーーーーーーーーー", user);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
