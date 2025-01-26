@@ -1,8 +1,8 @@
+import { createApi } from "@/trpc/server";
 import { Button } from "@repo/shadcn-ui/components/button";
+import { cookies } from "next/headers";
 import Image, { type ImageProps } from "next/image";
 import styles from "./page.module.css";
-import { createApi } from "@/trpc/server";
-import { cookies } from "next/headers";
 
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
