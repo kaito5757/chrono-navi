@@ -1,18 +1,7 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "files": {
-    "ignoreUnknown": false,
-    "ignore": [
-      "**/*.json",
-      "**/*.md",
-      "**/*.yml",
-      "**/*.yaml",
-      "**/*.lock",
-      "**/*.log",
-      "**/*.txt",
-      "**/*.tsbuildinfo",
-      "**/*.map"
-    ]
+    "ignoreUnknown": false
   },
   "formatter": {
     "enabled": true,

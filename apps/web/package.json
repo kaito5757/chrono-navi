@@ -10,7 +10,11 @@
     "check-types": "tsc --noEmit",
     "biome:check": "biome check .",
     "biome:fix": "biome check --fix .",
-    "pages:web:build": "npx @cloudflare/next-on-pages"
+    "pages:web:build": "npx @cloudflare/next-on-pages",
+    "build:worker": "opennextjs-cloudflare",
+    "dev:worker": "wrangler dev --port 8771",
+    "preview:worker": "pnpm build:worker && pnpm dev:worker",
+    "deploy:worker": "pnpm build:worker && wrangler deploy"
   },
   "dependencies": {
     "@biomejs/biome": "1.9.4",
@@ -25,7 +29,8 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.7",
+    "@opennextjs/aws": "^3.4.1",
+    "@opennextjs/cloudflare": "^0.4.0",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^20",

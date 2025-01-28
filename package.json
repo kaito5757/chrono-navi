@@ -14,8 +14,7 @@
     "check-types": "turbo check-types",
     "biome:check": "turbo biome:check",
     "biome:fix": "turbo biome:fix",
-    "pages:web:build": "turbo pages:web:build",
-    "pages:admin:build": "turbo pages:admin:build"
+    "deploy:worker": "turbo deploy:worker"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",

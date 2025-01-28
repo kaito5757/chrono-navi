@@ -1,0 +1,15 @@
+main = ".open-next/worker.js"
+name = "chrono-navi-web"
+compatibility_date = "2025-01-28"
+compatibility_flags = ["nodejs_compat"]
+assets = { directory = ".open-next/assets", binding = "ASSETS" }
+
+[env.staging.vars]
+NEXT_PUBLIC_AUTH_COOKIE_NAME = "web-stg-auth-token"
+NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxsZ3FpbXZveW1kY3Bqam1uaGprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzY2Njk0OTcsImV4cCI6MjA1MjI0NTQ5N30.r77Isso7HjdVMbkS6dukdWYqItPc7XZ88w_JOsuySm8"
+NEXT_PUBLIC_SUPABASE_URL="https://llgqimvoymdcpjjmnhjk.supabase.co"
+
+[env.production.vars]
+API_HOST = "production.example.com"
+API_ACCOUNT_ID = "production_example_user"
+SERVICE_X_DATA = { URL = "service-x-api.prod.example", MY_ID = 456 }
