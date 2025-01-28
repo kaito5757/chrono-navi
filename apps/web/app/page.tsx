@@ -1,6 +1,5 @@
-import { createApi } from "@/trpc/server";
 import { Button } from "@repo/shadcn-ui/components/button";
-import { cookies } from "next/headers";
+import { createServerApi } from "@repo/trpc-api/utils";
 import Image, { type ImageProps } from "next/image";
 import styles from "./page.module.css";
 
@@ -21,8 +20,8 @@ const ThemeImage = (props: Props) => {
 };
 
 export default async function Home() {
-  const api = await createApi(await cookies());
-  const user = await api.user.all();
+  const serverApi = await createServerApi();
+  const user = await serverApi.trpc.web.user.all();
   console.log("テストーーーーーーーーーーーーーーーーー", user);
 
   return (

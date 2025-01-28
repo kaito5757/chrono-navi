@@ -7,7 +7,7 @@ import { createClient } from "@repo/supabase-auth/server";
 import { cookies } from "next/headers";
 
 export async function logout() {
-  const supabase = await createClient(await cookies());
+  const supabase = await createClient(cookies());
 
   const { error } = await supabase.auth.signOut();
 

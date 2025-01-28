@@ -14,7 +14,8 @@
     ],
     // 「createCaller」の型注釈エラーを回避するために「declaration」を「false」に設定
     "declaration": false,
-    "declarationMap": false
+    "declarationMap": false,
+    "typeRoots": ["node_modules/@types"]
   },
   "include": ["."],
   "exclude": ["node_modules", ".turbo"]

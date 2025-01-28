@@ -96,24 +96,6 @@ importers:
       '@repo/trpc-api':
         specifier: workspace:*
         version: link:../../packages/trpc-api
-      '@tanstack/react-query':
-        specifier: ^5.65.0
-        version: 5.65.0(react@19.0.0)
-      '@tanstack/react-query-devtools':
-        specifier: ^5.65.0
-        version: 5.65.0(@tanstack/react-query@5.65.0(react@19.0.0))(react@19.0.0)
-      '@trpc/client':
-        specifier: 11.0.0-rc.730
-        version: 11.0.0-rc.730(@trpc/server@11.0.0-rc.730(typescript@5.7.3))(typescript@5.7.3)
-      '@trpc/next':
-        specifier: 11.0.0-rc.730
-        version: 11.0.0-rc.730(@tanstack/react-query@5.65.0(react@19.0.0))(@trpc/client@11.0.0-rc.730(@trpc/server@11.0.0-rc.730(typescript@5.7.3))(typescript@5.7.3))(@trpc/react-query@11.0.0-rc.730(@tanstack/react-query@5.65.0(react@19.0.0))(@trpc/client@11.0.0-rc.730(@trpc/server@11.0.0-rc.730(typescript@5.7.3))(typescript@5.7.3))(@trpc/server@11.0.0-rc.730(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3))(@trpc/server@11.0.0-rc.730(typescript@5.7.3))(next@15.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)
-      '@trpc/react-query':
-        specifier: 11.0.0-rc.730
-        version: 11.0.0-rc.730(@tanstack/react-query@5.65.0(react@19.0.0))(@trpc/client@11.0.0-rc.730(@trpc/server@11.0.0-rc.730(typescript@5.7.3))(typescript@5.7.3))(@trpc/server@11.0.0-rc.730(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)
-      '@trpc/server':
-        specifier: 11.0.0-rc.730
-        version: 11.0.0-rc.730(typescript@5.7.3)
       lucide-react:
         specifier: ^0.469.0
         version: 0.469.0(react@19.0.0)
@@ -129,12 +111,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
-      superjson:
-        specifier: ^2.2.2
-        version: 2.2.2
-      zod:
-        specifier: ^3.24.1
-        version: 3.24.1
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: ^1.13.7
@@ -327,6 +303,9 @@ importers:
       '@types/node':
         specifier: ^22.10.7
         version: 22.10.7
+      '@types/react':
+        specifier: 18.3.1
+        version: 18.3.1
       next:
         specifier: ^15.1.0
         version: 15.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)

@@ -23,6 +23,6 @@
     "healthcheck",
     "imgproxy",
     "trpc",
-    "turbopack"
+    "turbopack",
   ]
 }

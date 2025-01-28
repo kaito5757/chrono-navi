@@ -17,7 +17,6 @@ services:
     restart: always
     volumes:
       - ../apps/web/app:/app/apps/web/app
-      - ../apps/web/trpc:/app/apps/web/trpc
       - ../apps/web/middleware.ts:/app/apps/web/middleware.ts
       - ../apps/web/public:/app/apps/web/public
       - ../apps/web/.env.docker:/app/apps/web/.env
