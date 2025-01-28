@@ -3,8 +3,6 @@ import { createServerApi } from "@repo/trpc-api/utils";
 import Image, { type ImageProps } from "next/image";
 import styles from "./page.module.css";
 
-export const runtime = "edge";
-
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
   srcDark: string;
