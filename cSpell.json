@@ -22,6 +22,7 @@
     "supavisor",
     "healthcheck",
     "imgproxy",
-    "trpc"
+    "trpc",
+    "turbopack"
   ]
 }
