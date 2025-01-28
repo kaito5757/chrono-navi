@@ -9,9 +9,9 @@ export { fetchRequestHandler };
 export const createTRPCContext = cache(
   async (cookies: Promise<ReadonlyRequestCookies>) => {
     const client = await createClient(cookies);
-    const user = await client.auth.getUser();
+    const userResponse = await client.auth.getUser();
     return {
-      user,
+      user: userResponse.data.user,
     };
   },
 );
@@ -23,7 +23,7 @@ const t = initTRPC
 export const createTRPCRouter = t.router;
 export const createCallerFactory = t.createCallerFactory;
 export const protectedProcedure = t.procedure.use(({ ctx, next }) => {
-  if (!ctx.user.data.user) {
+  if (!ctx.user) {
     throw new TRPCError({ code: "UNAUTHORIZED" });
   }
   return next({

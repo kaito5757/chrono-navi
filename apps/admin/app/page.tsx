@@ -1,4 +1,5 @@
 import { Button } from "@repo/shadcn-ui/components/button";
+import { createServerApi } from "@repo/trpc-api/utils";
 import type { ImageProps } from "next/image";
 import Image from "next/image";
 import styles from "./page.module.css";
@@ -20,6 +21,10 @@ const ThemeImage = (props: Props) => {
 };
 
 export default async function Home() {
+  const serverApi = await createServerApi();
+  const user = await serverApi.trpc.admin.user.all();
+  console.log("テストーーーーーーーーーーーーーーーーー", user);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>

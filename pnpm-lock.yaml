@@ -35,6 +35,9 @@ importers:
       '@repo/supabase-db':
         specifier: workspace:*
         version: link:../../packages/supabase-db
+      '@repo/trpc-api':
+        specifier: workspace:*
+        version: link:../../packages/trpc-api
       lucide-react:
         specifier: ^0.469.0
         version: 0.469.0(react@19.0.0)
