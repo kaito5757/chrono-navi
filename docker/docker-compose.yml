@@ -9,27 +9,39 @@ version: '3.8'
 name: chrono-navi-local
 
 services:
-  next:
-    container_name: chrono-navi-next
+  next-web:
+    container_name: chrono-navi-next-web
     build:
       context: ..
-      dockerfile: ./docker/Dockerfile.dev
+      dockerfile: ./docker/Dockerfile.web.dev
     restart: always
     volumes:
       - ../apps/web/app:/app/apps/web/app
       - ../apps/web/middleware.ts:/app/apps/web/middleware.ts
       - ../apps/web/public:/app/apps/web/public
       - ../apps/web/.env.docker:/app/apps/web/.env
+      - ../packages:/app/packages
+    ports:
+      - "3000:3000"
+    command: >
+      sh -c "pnpm build && pnpm dev:web"
+
+  next-admin:
+    container_name: chrono-navi-next-admin
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.admin.dev
+    restart: always
+    volumes:
       - ../apps/admin/app:/app/apps/admin/app
       - ../apps/admin/middleware.ts:/app/apps/admin/middleware.ts
       - ../apps/admin/public:/app/apps/admin/public
       - ../apps/admin/.env.docker:/app/apps/admin/.env
       - ../packages:/app/packages
     ports:
-      - "3000:3000"
       - "3001:3001"
     command: >
-      sh -c "pnpm build && pnpm dev"
+      sh -c "pnpm build && pnpm dev:admin"
 
   studio:
     container_name: supabase-studio

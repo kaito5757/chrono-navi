@@ -11,8 +11,6 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  console.log("user", user);
-
   if (
     !user &&
     ignorePaths.every((path) => !request.nextUrl.pathname.startsWith(path))

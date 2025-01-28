@@ -1,3 +1,3 @@
-import type { EmailOtpType } from "@supabase/supabase-js";
+import type { EmailOtpType, UserResponse } from "@supabase/supabase-js";
 
-export type { EmailOtpType };
+export type { EmailOtpType, UserResponse };

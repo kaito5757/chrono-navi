@@ -1,0 +1,30 @@
+FROM node:18-alpine
+
+RUN apk update && apk add --no-cache libc6-compat
+RUN npm install -g pnpm
+
+ENV PNPM_HOME=/root/.local/share/pnpm
+ENV PATH="$PNPM_HOME:$PATH"
+
+WORKDIR /app
+
+COPY package.json ./
+COPY pnpm-lock.yaml ./
+COPY pnpm-workspace.yaml ./
+COPY turbo.json ./
+
+COPY apps/admin/package.json /app/apps/admin/
+COPY apps/admin/pnpm-workspace.yaml /app/apps/admin/
+COPY apps/admin/tailwind.config.ts /app/apps/admin/
+COPY apps/admin/postcss.config.js /app/apps/admin/
+COPY apps/admin/next.config.js /app/apps/admin/
+COPY apps/admin/tsconfig.json /app/apps/admin/
+COPY apps/admin/middleware.ts /app/apps/admin/
+
+COPY packages /app/packages
+
+RUN pnpm -g add turbo
+
+RUN pnpm install
+
+RUN pnpm --filter ./apps/admin uninstall -D @cloudflare/next-on-pages
