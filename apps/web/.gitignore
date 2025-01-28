@@ -36,6 +36,6 @@ yarn-error.log*
 next-env.d.ts
 
 .wrangler
-.wrangler.toml
+wrangler.toml
 
 .open-next
