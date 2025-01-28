@@ -5,7 +5,7 @@ import { createTRPCRouter, protectedProcedure } from "../trpc";
 export const userRouter = createTRPCRouter({
   all: protectedProcedure.query(async ({ ctx }) => {
     const usersData = await db.select().from(users);
-    const authUser = ctx.user.data.user;
+    const authUser = ctx.user;
     return { usersData, user: authUser?.id };
   }),
 });
