@@ -2,7 +2,7 @@ import { updateSession } from "@repo/supabase-auth/middleware";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-const ignorePaths = ["/login", "/signup", "/auth/confirm"];
+const ignorePaths = ["/login", "/signup", "/auth/confirm", "/error"];
 
 export async function middleware(request: NextRequest) {
   const { supabase, supabaseResponse } = await updateSession(request);
